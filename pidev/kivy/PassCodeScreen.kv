@@ -130,7 +130,21 @@
             center_y: root.center_y - 240
             color: 0.019, 0.337, 1, 1
             size: 80, 80
-            on_press: root.check_pass()
+            on_press: root.transition_back()
+
+        DPEAButton:
+            id: enter
+            center_x: root.center_x + 100
+            center_y: root.center_y - 280
+            color: 0.019, 0.337, 1, 1
+            size: 80, 80
+            on_press: root.transition_back()
+            Image:
+                source: "images/angle-left.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
 
 <MainScreen>
     name: 'main'

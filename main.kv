@@ -5,32 +5,59 @@
     FloatLayout:
         size_hint: None, None
 
-    DPEAButton:
-        id: test_button
-        text: 'test'
-        size: 100, 100
-        x: root.width * 0.75
-        y: root.height * 0.5
-        color: 0, 1, 0, 1
-        on_press: root.pressed()
+        DPEAButton:
+            id: test3
+            text: 'test3'
+            active: False
+            size: 100, 100
+            x: root.width * 0.75
+            y: root.height * 0.5
+            color: 0, 1, 0, 1
+            on_press: root.pressed()
 
-    DPEAButton:
-        text: "test2"
-        size: 100, 100
-        x: root.width * 0.25
-        y: root.height * 0.5
-        color: 1, 0, 0, 1
-        on_press: root.pressed()
+        SelfUpdatingLabel:
+            id: time_label
+            size_hint: None, None
+            font_size: 30
+            update_property: time.now
+            update_property_parameters: None
+            center_x: root.width * 0.5
+            center_y: root.height * 0.45
+            color: 1, 1, 1, 1
+            bold: True
+            outline_width: self.font_size * 0.1
+            outline_color: 0, 0, 0
 
-    SelfUpdatingLabel:
-        id: time_label
-        size_hint: None, None
-        font_size: 30
-        update_property: time.now
-        update_property_parameters: None
-        center_x: root.width * 0.5
-        center_y: root.height * 0.45
-        color: 1, 1, 1, 1
-        bold: True
-        outline_width: self.font_size * 0.1
-        outline_color: 0, 0, 0
+        Button:
+            background_normal: "Oogway.png"
+            size_hint: None, None
+            text: "test2"
+            id: test2
+            width: 100
+            x: root.width * 0.25
+            y: root.height * 0.5
+            on_press: root.animate()
+            on_release: root.go_Joystick()
+
+
+        Label:
+            id: x_label
+            text: ""
+            font_size: 30
+            x: root.width * 0.5
+            y: root.height * 0.3
+            color: 1, 1, 1, 1
+            bold: True
+            outline_width: self.font_size * 0.1
+            outline_color: 0, 0, 0
+
+        Label:
+            id: y_label
+            text: ""
+            font_size: 30
+            x: root.width * 0.5
+            y: root.height * 0.5
+            color: 1, 1, 1, 1
+            bold: True
+            outline_width: self.font_size * 0.1
+            outline_color: 0, 0, 0

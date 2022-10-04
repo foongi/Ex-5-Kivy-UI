@@ -1,0 +1,16 @@
+<JoystickScreen>:
+    name: 'Joystick'
+    FloatLayout:
+        size_hint: None, None
+
+    Button:
+        background_normal: "Oogway.png"
+        size_hint: None, None
+        id: "joystick_button"
+        text: "Yo"
+        width: 200
+        x: root.width * .5 - 200
+        y: root.height * .5 - 200
+        on_press: root.animate()
+        on_release: root.transition_back()
+
